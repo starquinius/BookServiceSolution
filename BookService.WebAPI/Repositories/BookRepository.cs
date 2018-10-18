@@ -37,6 +37,13 @@ namespace BookService.WebAPI.Repositories
             return bookServiceContext.Books.Where(bk => bk.Id == bookId).FirstOrDefault();
         }
 
+        //Get image by book
+        public string GetImage(int bookId)
+        {
+
+            return bookServiceContext.Books.Where(bk => bk.Id == bookId).Select(bk => bk.FileName).FirstOrDefault();
+        }
+
 
     }
 }
