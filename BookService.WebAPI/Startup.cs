@@ -33,6 +33,8 @@ namespace BookService.WebAPI
                 options => options.UseSqlServer(Configuration.GetConnectionString("BookService")));
             //Add depency injection for BookRepository
             services.AddScoped<BookRepository>();
+            services.AddScoped<AuthorRepository>();
+            services.AddScoped<PublisherRepository>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);           
 
