@@ -10,7 +10,7 @@ namespace BookService.WebAPI.Repositories
 {
     public class BookRepository
     {
-        //Context Injection
+        //Context
         private BookServiceContext bookServiceContext;
 
         public BookRepository(BookServiceContext context)
