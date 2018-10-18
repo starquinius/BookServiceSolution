@@ -13,9 +13,9 @@ namespace BookService.WebAPI.Controllers
     [ApiController]
     public class AuthorsController : Controller
     {
-        BookRepository _authorRepository;
+        AuthorRepository _authorRepository;
 
-        public AuthorsController(BookRepository authorRepository)
+        public AuthorsController(AuthorRepository authorRepository)
         {
             _authorRepository = authorRepository;
         }
@@ -32,7 +32,7 @@ namespace BookService.WebAPI.Controllers
         [Route("Basic")] //Als woordje basic bij de route staat, dan deze httpget uitvoeren
         public IActionResult GetAuthorBasic()
         {
-            return Ok(_authorRepository.ListBasic());
+            return Ok(_authorRepository.GetAuthorBasic());
         }
 
         //api/Authors/{id}
