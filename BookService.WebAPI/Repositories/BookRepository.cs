@@ -1,6 +1,7 @@
 ﻿using BookService.WebAPI.Data;
 using BookService.WebAPI.DTO;
 using BookService.WebAPI.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,13 +22,19 @@ namespace BookService.WebAPI.Repositories
         //List all books
         public List<Book> List()
         {
-            return bookServiceContext.Books.ToList();
+            return bookServiceContext.Books.Include(au => au.Id).Include(pu => pu.Id).ToList();
         }
 
         //List basics for books
         public List<BookBasic> ListBasic()
         {
             return bookServiceContext.Books.Select(bk=> new BookBasic { Id = bk.Id, Title = bk.Title }).ToList();
+        }
+
+        //List book by Id
+        public Book GetById(int bookId)
+        {
+            return bookServiceContext.Books.Where(bk => bk.Id == bookId).FirstOrDefault();
         }
 
 
