@@ -22,7 +22,7 @@ namespace BookService.WebAPI.Repositories
         //List all books
         public List<Book> List()
         {
-            return bookServiceContext.Books.Include(au => au.Id).Include(pu => pu.Id).ToList();
+            return bookServiceContext.Books.Include(b => b.Author).Include(b => b.Publisher).ToList();
         }
 
         //List basics for books

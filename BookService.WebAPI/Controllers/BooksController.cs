@@ -33,5 +33,13 @@ namespace BookService.WebAPI.Controllers
         {
             return Ok(_bookRepository.ListBasic());
         }
+
+        //api/books/{id}
+        [HttpGet]
+        [Route("{id}")]
+        public IActionResult GetBook(int Id)
+        {
+            return Ok(_bookRepository.GetById(Id));
+        }
     }
 }
