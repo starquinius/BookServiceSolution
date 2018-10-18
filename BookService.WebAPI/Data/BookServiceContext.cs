@@ -37,13 +37,13 @@ namespace BookService.WebAPI.Data
             modelBuilder.Entity<Book>()
                 .ToTable("Book")
                 .HasData(//Anoniem
-                new { Id = 1, ISBN = "123456789", Title="Learning C#", NumberOfPages = 420, Filename = "book1.jpg", AuthorId=1, PublisherId=1},
-                new { Id = 2, ISBN = "45689132", Title = "Mastering Linq", NumberOfPages = 360, FileName = "book2.jpg", AuthorId = 2, PublisherId = 1 }, 
-                new { Id = 3, ISBN = "15856135", Title = "Mastering Xamarin", NumberOfPages = 360, FileName = "book3.jpg", AuthorId = 1, PublisherId = 1 }, 
-                new { Id = 4, ISBN = "56789564", Title = "Exploring ASP.Net Core 2.0", NumberOfPages = 360, FileName = "book1.jpg", AuthorId = 2, PublisherId = 1},
-                new { Id = 5, ISBN = "234546684", Title = "Unity Game Development", NumberOfPages = 420, FileName = "book2.jpg", AuthorId = 2, PublisherId = 1 }, 
-                new { Id = 6, ISBN = "789456258", Title = "Cooking is fun", NumberOfPages = 40, FileName = "book3.jpg", AuthorId = 3, PublisherId = 2 }, 
-                new { Id = 7, ISBN = "94521546", Title = "Secret recipes", NumberOfPages = 53, FileName = "book3.jpg", AuthorId = 3, PublisherId = 2 }
+                new { Id = 1, ISBN = "123456789", Title="Learning C#", NumberOfPages = 420, Filename = "book1.jpg", AuthorId=1, PublisherId=1, Price=24.99m, Year=2018},
+                new { Id = 2, ISBN = "45689132", Title = "Mastering Linq", NumberOfPages = 360, FileName = "book2.jpg", AuthorId = 2, PublisherId = 1, Price=35.99m, Year=2016 }, 
+                new { Id = 3, ISBN = "15856135", Title = "Mastering Xamarin", NumberOfPages = 360, FileName = "book3.jpg", AuthorId = 1, PublisherId = 1, Price=50.00m, Year=2017 }, 
+                new { Id = 4, ISBN = "56789564", Title = "Exploring ASP.Net Core 2.0", NumberOfPages = 360, FileName = "book1.jpg", AuthorId = 2, PublisherId = 1, Price=45.00m, Year=2018},
+                new { Id = 5, ISBN = "234546684", Title = "Unity Game Development", NumberOfPages = 420, FileName = "book2.jpg", AuthorId = 2, PublisherId = 1, Price=70.50m, Year=2017 }, 
+                new { Id = 6, ISBN = "789456258", Title = "Cooking is fun", NumberOfPages = 40, FileName = "book3.jpg", AuthorId = 3, PublisherId = 2, Price=52.00m, Year=2007 }, 
+                new { Id = 7, ISBN = "94521546", Title = "Secret recipes", NumberOfPages = 53, FileName = "book3.jpg", AuthorId = 3, PublisherId = 2, Price=30.00m, Year=2017 }
                 );
 
             base.OnModelCreating(modelBuilder);

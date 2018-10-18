@@ -17,12 +17,14 @@ namespace BookService.WebAPI.Models
         public Author Author { get; set; }
         public Publisher Publisher { get; set; }
         public string FileName { get; set; }
+        public decimal Price { get; set; }
+        public int Year { get; set; }
 
         //Constructor
         public Book() { }
 
         //Constructor Overload
-        public Book(int id, string title, string isbn, int numberOfPages, Author author, Publisher publisher, string fileName ="")
+        public Book(int id, string title, string isbn, int numberOfPages, Author author, Publisher publisher, string fileName, decimal price, int year)
         {
             Id = id;
             Title = title;
@@ -31,6 +33,8 @@ namespace BookService.WebAPI.Models
             Author = author;
             Publisher = publisher;
             FileName = fileName;
+            Price = price;
+            Year = year;
         }
         
     }
