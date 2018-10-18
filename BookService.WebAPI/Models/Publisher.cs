@@ -7,6 +7,20 @@ namespace BookService.WebAPI.Models
 {
     public class Publisher
     {
+        //Constructor (Entity Framework, dus parameterloze constructor nodig!)
+        public Publisher()
+        {
+        }
+
+        //Contructor Overload
+        public  Publisher(int id, string name, string country)
+        {
+            Id = id;
+            Name = name;
+            Country = country;
+        }
+
+
         public int Id { get; set; }
         public string Name { get; set; }
         public string Country { get; set; }    
